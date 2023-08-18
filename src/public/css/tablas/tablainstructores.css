@@ -1,0 +1,109 @@
+header{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+.table{
+	width: 100%;
+	height: auto;
+	padding: 1px;
+}
+select{
+	border: none;
+	background: transparent;
+	outline: none;
+	font-size: 18px;
+}
+select:hover{
+	cursor: pointer;
+	background: #fff;
+}
+thead{
+	background: #fff;
+}
+
+.caja{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.caja ul{
+	list-style-type: none;
+
+}
+
+.caja ul li{
+	float: left;
+	width: 30px;
+	height: 23px;
+	cursor: pointer;
+	transition: .3s;
+	text-align: center;
+	padding-top: 5px;
+}
+.caja ul li:hover{
+	background: #999;
+	transition: .3s;
+}
+
+.caja ul .inicio{
+	float: left;
+	width: 60px;
+	height: 23px;
+	background: #333;
+	cursor: pointer;
+	transition: .3s;
+	text-align: center;
+	padding-top: 5px;
+}
+.caja ul .inicio:hover{
+	background: #999;
+	transition: .3s;
+}
+
+.caja ul .final{
+	float: left;
+	width: 60px;
+	height: 23px;
+	background: #333;
+	cursor: pointer;
+	transition: .3s;
+	text-align: center;
+	padding-top: 5px;
+}
+.caja ul .final:hover{
+	background: #999;
+	transition: .3s;
+}
+.caja ul .active{
+	background: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+	
+}
+
+body.dark select{
+	background: #555 !important;
+	color: #fff !important;
+}
+body.dark select:hover{
+	cursor: pointer !important;
+	background: #000 !important;
+}
+
+body.dark thead{
+	background: #000;
+}
+
+body.dark .caja ul .active{
+	background: #333;
+}

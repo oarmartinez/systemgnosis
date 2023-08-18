@@ -1,0 +1,79 @@
+.desplasador{
+	width: 100%;
+}
+.carton{
+	width: 300px;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px 10px 10px 10px;
+	margin-top: 40px;
+	border: 1px solid #333;
+	background: #fff;
+}
+.carton h3{	
+	width: 100%;
+	padding-left: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.carton .margen{
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.carton .margen h3{
+	width: 100%;
+	padding-left: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	margin: 0;
+}
+.carton .campo_info{
+	width: 100%;
+	padding-left: 30px;
+	outline: none;
+	transition: .5s;
+	font-family: 'Open Sans', cursive;
+	font-size: 12px;
+	margin: 0;
+	color: #CFA007;
+}
+.carton .campo_info:hover{
+	background: #333;
+	transition: .5s;
+}
+.carton .margen button{
+	width: 100%;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	transition: .5s;
+	border: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.carton .margen button:hover{
+	background: #fff;
+	transition: .5s;
+	color: #333;
+}
+.grafica{
+	width: 200px;
+	height: 200px;
+	background: #fff;
+}
+
+.instrucciones{
+	width: 350px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #333;
+}
+p{
+	text-align: justify;
+}

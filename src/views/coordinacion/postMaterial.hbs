@@ -1,0 +1,105 @@
+	<link rel="stylesheet" type="text/css" href="/css/oficinas1.css?">
+	<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="/css/estadisticas.css">
+	<link rel="stylesheet" type="text/css" href="/css/styleOficinaPosteo4.css">
+	<link rel="stylesheet" type="text/css" href="/css/tablas/tablainstructores.css">
+	<script type="text/javascript" src="/librerias/query/paginadojquery.js"></script>
+    <script type="text/javascript" src="/js/paginados/paginadoModulosEditor.js"></script>
+
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+{{> nav }}
+
+<div class="contenido">
+	<div class="desplasador">	
+	<div class="caja_campos">
+		<a href="#" id="titleg">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>TITULOS GRANDES</p></div>
+		</a>
+		<a href="#" id="titlem">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>TITULOS MEDIANOS</p></div>
+		</a>
+		<a href="#" id="titles">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>TITULOS PEQUEÑOS</p></div>
+		</a>
+		<a href="#" id="imgT">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>IMAGEN Y TEXTOS</p></div>
+		</a>
+		<a href="#" id="textos">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>TEXTOS</p></div>
+		</a>
+		<a href="#" id="CL">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>OTROS</p></div>
+		</a>
+		<a href="#" id="Archi">
+			<span  class="icon-doc-text-inv"></span>
+			<div class="descripcionbotoncms"><p>ARCHIVOS</p></div>
+		</a>
+	</div>
+	<div class="caja_formulario_campos">	
+		<div class="caja_lector_menu" id="caja_lector_menu"></div>
+		<!---FORMULARIO-->
+		<!---->
+		<div class="cajon_formulario">	
+			<h1>MATERIAL DE ENTREGA</h1>
+            <h2>{{> mensajes }}</h2>
+			<div class="formulario">
+				<form action="/postMaterial/"  method="POST" autocomplete="off">
+					<input type="submit" value="GUARDAR MATERIAL" >
+					<h2>TITULO PRINCIPAL</h2>
+					<input type="text" name="titulo" placeholder="INSERTA EL TITULO DEL POST AQUÍ" required>
+					<h2>POST</h2>
+					<div class="botones_mostrar">
+						<span id="elementos_view">VIEW</span>
+						<span id="html_view">HTML</span>
+					</div>
+					<div class="html_form">
+						<div class="contenido_a_ver abrirPOST" id="contenido_a_ver"><span id="ventana"></span></div>
+						<div class="html" id="html"><textarea id="tabla" name="post"></textarea></div>
+					</div>		
+				</form>
+			</div>	
+		</div>
+		</div>
+	
+    <div class="linea"></div>
+
+	<!---BUSCADOR-->
+	<!----->
+	
+	<div class="galery">
+        <div class="caja_posteado">
+            {{#each tablaPost}}
+            <h3>TITULO: {{titulo}}</h3>
+            {{{post}}}
+            <div class='date'>{{timeago fecha}}</div>
+			<div class='date'><a href="/eliminarMaterial/{{id}}">ELIMINAR POST</a></div>
+            {{else}}
+            <h1>NO HAY MENSAJES</h1>
+            {{/each}}
+        </div>
+	</div>
+</div>
+
+</div>
+</div>
+
+{{/if}}
+
+
+<script src="/librerias/query/jquery-3.6.0.min.js"></script>
+<script src="/js/menus/menuCms.js"></script>
+<script src="/js/menus/menuDeContenidos.js"></script>
+<script src="/js/efectos/paginaMuestraAndHtml.js"></script>

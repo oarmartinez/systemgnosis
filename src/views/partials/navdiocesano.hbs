@@ -1,0 +1,67 @@
+
+<div class="navegador">
+	<a href="/escritorio" class="logo" ><img title="OFFICE" src="/img/logognosis.png"></a>
+
+	<div class="botonnav">
+		<span class="icon-users" id="dataInstructores"></span>
+		<div class="quitar" id="cajadataInstructores">
+			<a href="/registrar"  class="descripcionboton">REGISTRO</a>
+			<a href="/data/{{user.diocesis}}"  class="descripcionboton">DATA</a>	
+			<a href="/detallesPersonal/{{user.usuario}}"  class="descripcionboton">MIS DATOS</a>
+		</div>
+	</div>
+
+	<div class="botonnav">
+		<span class="icon-folder-open-1" id="gestorArchivos"></span>
+		<div class="quitar" id="cajagestorArchivos">			
+			<a href="/archivos/{{ user.id }}" id="archivos" class="descripcionboton" >GESTOR DE ARCHIVOS</a>
+		</div>
+	</div>
+
+	<div class="botonnav">		
+		<span class="icon-upload-cloud" id="posteo"></span>
+		<div class="quitar" id="cajaposteo">		
+			<a href="/mensajeNacional/" id="entregaMaterial" class="descripcionboton">ENTREGA DE MATERIAL</a>	
+			<a href="/postCoordinacion/{{ user.id }}" id="postSegunda" class="descripcionboton">POST COORDINACION</a>
+			<a href="/postsegunda/{{ user.id }}" id="postSegunda" class="descripcionboton">POST SEGUNDA</a>
+			<a href="/postWeb/{{ user.id }}" id="postWeb" class="descripcionboton">POST WEB</a>
+		</div>
+	</div>
+
+	<div class="botonnav">		
+		<span class="icon-user-plus" id="primerasCamaras"></span>
+		<div class="quitar" id="cajaprimerasCamaras">
+			<a href="/registroMisPrimerasCamaras" class="descripcionboton">REGISTRAR MIS PRIMERAS CAMARAS</a>
+			<a href="/dataPrimerasCamarasDiocesanas/{{user.diocesis}}" class="descripcionboton">DATA PRIMERAS CAMARAS POR DIOCESIS</a>			
+			<a href="/dataMisPrimerasCamaras/{{user.usuario}}" class="descripcionboton">MIS PRIMERAS CAMARAS</a>
+		</div>
+	</div>
+	<div class="botonnav">		
+		<span class="icon-book" id="biblioteca"></span>
+		<div class="quitar" id="cajabiblioteca">
+			<a href="#" class="descripcionboton">BIBLIOTECA</a>
+		</div>
+	</div>
+	<div class="botonnav">		
+		<span class="icon-chart-bar" id="estadisticas"></span>
+		<div class="quitar" id="cajaestadisticas">
+			<a href="#" class="descripcionboton">ANALISIS COORDINACION</a>
+			<a href="#" class="descripcionboton">ANALISIS P. CAMARAS</a>
+			<a href="#" class="descripcionboton">MI ANALISIS</a>
+		</div>
+	</div>
+	<div class="botonnav">		
+		<span class="icon-pencil" id="registroCursos"></span>
+		<div class="quitar" id="cajaregistroCursos">
+			<a href="#" class="descripcionboton">CURSOS</a>
+			<a href="#" class="descripcionboton">INSCRITOS</a>
+		</div>
+	</div>
+	<a href="/logout" >
+		<span class="icon-logout" title="Logout"></span>
+	</a>
+	
+</div>	
+
+
+<script src="/js/menus/navdiocesano.js"></script>

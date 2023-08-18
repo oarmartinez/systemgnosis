@@ -1,0 +1,103 @@
+	<link rel="stylesheet" type="text/css" href="css/inscripciones1.css">
+	<link rel="stylesheet" type="text/css" href="css/oficinas1.css?">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/estadisticas.css">
+	<link rel="stylesheet" type="text/css" href="css/styleOficinaPosteo4.css">
+	<link rel="stylesheet" type="text/css" href="css/tablas/tablainstructores.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+{{#if (eq user.cargo "ADMIN")}}
+{{> nav }}
+{{else}} {{#if (eq user.cargo "ODE")}}
+{{> navode }}
+{{else}} {{#if (eq user.cargo "OBISPO")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "RECTOR")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR MISIONAL")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR TECNOTRONICA")}}
+{{> navtecnotronica }}
+{{else}} {{#if (eq user.cargo "COORDINADOR AGEACAC")}}
+{{> navageacac }}
+{{else}} {{#if (eq user.cargo "COORDINADOR JUVENTUDES")}}
+{{> navjuventudes }}
+{{else}} {{#if (eq user.cargo "MISIONERO")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "INSTRUCTOR LOCAL")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE AGEACAC")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE JUVENTUDES")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "TUTOR DE TECNOTRONICA")}}
+{{> navInstructores }}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+
+<div id ="contenido" class="contenido">
+<div class="desplasador" style="padding-bottom: 30vh;">
+    
+<h1>Cuerpo MISIONAL: Misionero {{ user.nombre }} {{ user.apellido }}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="display" id="table_id" >
+            <thead>
+                <tr>
+                    <th scope="col">CEDULA</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">APELLIDO</th>
+                    <th scope="col">TELEFONO</th>
+                    <th scope="col">INSCRITO</th>
+                    <th scope="col">DETALLES</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            {{#each tabla}}
+                <tr>
+                    <th scope="row">{{cedula}}</th>
+                    <td>{{nombre}}</td>
+                    <td>{{apellido}}</td>
+                    <td>{{telefono}}</td>         
+                    <td>{{timeago fecha}}</td>
+                    <td style="text-align: center;"><a href="/detallesPrimeraCamara/{{cedula}}"><span class="icon-eye"></span></a></td> 
+                </tr>
+                
+            {{else}}
+            <h1>NO HAY INSTRUCTORES</h1>
+            {{/each}}
+            </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+<script src="js/efectos/datatable.js"></script>
+{{/if}}

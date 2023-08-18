@@ -1,0 +1,84 @@
+	<link rel="stylesheet" type="text/css" href="/css/oficinas1.css?">
+	<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="/css/estadisticas.css">
+	<link rel="stylesheet" type="text/css" href="/css/styleOficinaPosteo4.css">
+	<link rel="stylesheet" type="text/css" href="/css/tablas/tablainstructores.css">
+	<script type="text/javascript" src="/librerias/query/paginadojquery.js"></script>
+    <script type="text/javascript" src="/js/paginados/paginadoModulosEditor.js"></script>
+
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+
+{{#if (eq user.cargo "ADMIN")}}
+{{> nav }}
+{{else}} {{#if (eq user.cargo "ODE")}}
+{{> navode }}
+{{else}} {{#if (eq user.cargo "OBISPO")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "RECTOR")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR MISIONAL")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR TECNOTRONICA")}}
+{{> navtecnotronica }}
+{{else}} {{#if (eq user.cargo "COORDINADOR AGEACAC")}}
+{{> navageacac }}
+{{else}} {{#if (eq user.cargo "COORDINADOR JUVENTUDES")}}
+{{> navjuventudes }}
+{{else}} {{#if (eq user.cargo "MISIONERO")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "INSTRUCTOR LOCAL")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE AGEACAC")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE JUVENTUDES")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "TUTOR DE TECNOTRONICA")}}
+{{> navInstructores }}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+
+<div class="contenido">
+	<div class="desplasador">	
+        <div class="galery">
+            <div class="caja_posteado">
+                {{#each tablaPost}}
+                <h3>AUTOR: {{idautor}}</h3>
+                <h3>TITULO: {{titulo}}</h3>
+                {{{post}}}
+                <div class='date'>{{timeago fecha}}</div>
+			    <div class='date'><a href="/eliminarPS/{{id}}">ELIMINAR POST</a></div>
+                {{else}}
+                <h1>NO HAY MENSAJES</h1>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{{/if}}
+
+
+<script src="/librerias/query/jquery-3.6.0.min.js"></script>
+<script src="/js/menus/menuCms.js"></script>
+<script src="/js/menus/menuDeContenidos.js"></script>
+<script src="/js/efectos/paginaMuestraAndHtml.js"></script>

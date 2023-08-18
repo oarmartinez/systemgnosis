@@ -1,0 +1,190 @@
+	<link rel="stylesheet" type="text/css" href="/css/oficinas1.css">
+	<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="/css/escritorios/galeriasInstructores.css">
+
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+
+
+{{#if (eq user.cargo "ADMIN")}}
+{{> nav }}
+{{else}} {{#if (eq user.cargo "ODE")}}
+{{> navode }}
+{{else}} {{#if (eq user.cargo "OBISPO")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "RECTOR")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR MISIONAL")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR TECNOTRONICA")}}
+{{> navtecnotronica }}
+{{else}} {{#if (eq user.cargo "COORDINADOR AGEACAC")}}
+{{> navageacac }}
+{{else}} {{#if (eq user.cargo "COORDINADOR JUVENTUDES")}}
+{{> navjuventudes }}
+{{else}} {{#if (eq user.cargo "MISIONERO")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "INSTRUCTOR LOCAL")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE AGEACAC")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE JUVENTUDES")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "TUTOR DE TECNOTRONICA")}}
+{{> navInstructores }}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+
+
+<div class="contenido">
+    <div class="desplasador">
+        <div id="busquedaData" class="cajon_instructores">
+        {{#each tabla}}
+            <article>
+
+                <div class='imginstructor'><img src="{{img}}"></div>
+
+
+
+
+                <div class='datospersonales'>      
+                    <h3>DATOS PERSONALES</h3>
+                    <div class='campo'>
+                        <p>USUARIO: </p>
+                        <span>{{usuario}}</span>
+                    </div>
+                    <div class='campo'>                    
+                        <p>CEDULA: </p>
+                        <span>{{cedula}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>FECHA DE NACIMIENTO: </p>
+                        <span>{{fechanacimiento}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>SEXO: </p>
+                        <span>{{sexo}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>ESTADO CIVIL: </p>
+                        <span>{{ecivil}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>HIJOS: </p>
+                        <span>{{hijos}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>NUMERO DE HIJOS: </p>
+                        <span>{{nhijos}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>PROFESION: </p>
+                        <span>{{profesion}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>TELEFONO: </p>
+                        <span>{{telefono}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>NOMBRE: </p>
+                        <span>{{nombre}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>APELLIDO: </p>
+                        <span>{{apellido}}</span>
+                    </div>
+                    
+                    <div class='campo'>
+                        <p>CORREO: </p>
+                        <span>{{email}}</span>
+                    </div>                     
+                </div>           
+                <div class='datosinstitucionales'>
+                        <h3>DATOS INSTITUCIONALES</h3>
+                        <div class='campo'>
+                            <p>RAMA: </p>
+                            <span>{{rama}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>CARGO: </p>
+                            <span>{{cargo}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>UNGIDO: </p>
+                            <span>{{ungido}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>TIPO DE UNGIDO: </p>
+                            <span>{{tipoungido}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>ESTADO: </p>
+                            <span>{{estado}}</span>
+                        </div>
+
+                        <div class='campo'>
+                            <p>DIOCESIS: </p>
+                            <span>{{diocesis}}</span>
+                        </div>
+
+                        <div class='campo'>                        
+                            <p>LUMISIAL: </p>
+                            <span>{{lumisial}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>ESTATUS: </p>
+                            <span>{{estatus}}</span> 
+                        </div> 
+                        
+                        <div class='campoestados'>    
+                            <p>ESTADOS RECORRIDOS: </p> 
+                            <span>{{estadosrecorridos}}</span>
+                        </div>
+                        
+                        <div class='campo'>
+                            <p>FECHA INSCRIPCIÓN: </p>
+                            <span>{{fecha}}</span> 
+                        </div>
+                </div>
+               
+        
+            </article>            
+        {{else}}
+            <h1>NO HAY INSTRUCTOR CON ESE USUARIO</h1>
+        {{/each}}
+        </div>
+    </div>
+</div>
+
+{{/if}}

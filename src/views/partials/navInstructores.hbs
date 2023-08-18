@@ -1,0 +1,52 @@
+
+<div class="navegador">
+	<a href="/escritorio" class="logo" ><img title="OFFICE" src="/img/logognosis.png"></a>
+
+	<div class="botonnav">
+		<span class="icon-users" id="dataInstructores"></span>
+		<div class="quitar" id="cajadataInstructores">
+			<a href="/detallesPersonal/{{user.usuario}}"  class="descripcionboton">MIS DATOS</a>	
+		</div>
+	</div>
+	<div class="botonnav">
+		<span class="icon-folder-open-1" id="gestorArchivos"></span>
+		<div class="quitar" id="cajagestorArchivos">			
+			<a href="/archivos/{{ user.id }}" id="archivos" class="descripcionboton" >GESTOR DE ARCHIVOS</a>
+		</div>
+	</div>
+
+	<div class="botonnav">		
+		<span class="icon-upload-cloud" id="posteo"></span>
+		<div class="quitar" id="cajaposteo">		
+			<a href="/mensajeNacional/" id="entregaMaterial" class="descripcionboton">ENTREGA DE MATERIAL</a>
+			<a href="/verPostCoordinaciones/{{user.rama}}&{{user.diocesis}}" id="entregaMaterial" class="descripcionboton">VER POST COORDINACION</a>		
+		</div>
+	</div>
+
+	<div class="botonnav">		
+		<span class="icon-user-plus" id="primerasCamaras"></span>
+		<div class="quitar" id="cajaprimerasCamaras">
+			<a href="/registroMisPrimerasCamaras" class="descripcionboton">REGISTRAR MIS PRIMERAS CAMARAS</a>
+			<a href="/dataMisPrimerasCamaras/{{user.usuario}}" class="descripcionboton">MIS PRIMERAS CAMARAS</a>
+		</div>
+	</div>
+	<div class="botonnav">		
+		<span class="icon-book" id="biblioteca"></span>
+		<div class="quitar" id="cajabiblioteca">
+			<a href="#" class="descripcionboton">BIBLIOTECA</a>
+		</div>
+	</div>
+	<div class="botonnav">		
+		<span class="icon-chart-bar" id="estadisticas"></span>
+		<div class="quitar" id="cajaestadisticas">
+			<a href="#" class="descripcionboton">MI ANALISIS</a>
+		</div>
+	</div>
+	<a href="/logout" >
+		<span class="icon-logout" title="Logout"></span>
+	</a>
+	
+</div>	
+
+
+<script src="/js/menus/navInstructores.js"></script>

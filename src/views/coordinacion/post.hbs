@@ -1,0 +1,19 @@
+{{#if user}}
+<h1>post</h1>
+<form action="/coordinacion/post" method="post">
+<input type="text" name="rama" value="{{ user.rama }}">
+<input type="text" name="estado" value="{{ user.estado }}">
+<input type="text" name="diocesis" value="{{ user.diocesis }}">
+<input type="text" name="titulo" >
+<textarea name="post"  cols="30" rows="10"></textarea>
+<input type="submit" value="SEND">
+</form>
+<br>
+{{#each tablaPost}}
+<span>{{titulo}}</span><br>
+<div>{{{post}}}</div><br>
+<h5>{{timeago fecha}}</h5><br>
+{{else}}
+<h1>NO HAY MENSAJES</h1>
+{{/each}}
+{{/if}}

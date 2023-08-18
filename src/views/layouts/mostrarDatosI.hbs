@@ -1,0 +1,61 @@
+   	<link rel="stylesheet" type="text/css" href="/css/oficinas1.css">
+	<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="/css/inscripciones1.css">
+	<style>
+		span{
+			width: 300px;
+			padding-left: 15px;
+		}
+		.caja_formularios_archivos{
+			padding-bottom: 200px;
+		}
+	</style>
+
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+
+{{> nav }}
+<div class="contenido">
+	<div class="desplazador">
+		
+		<div class="contenedor">
+		<div class="caja_formularios_archivos">
+			
+				<h2>INSERTAR DATOS</h2>
+			<form action="/mostrarDatosI" method="POST" autocomplete="off">
+                {{#each tabla}}
+				<input type="hidden" name="id" value="{{id}}">
+				<input type="hidden" name="usuario" value="{{usuario}}">
+				<span>UNGIDO: {{ungido}}</span>
+				<select name="ungido" >
+					<option value="PORCOMPLETAR">SELECCIONAR</option>
+					<option value="SI">SI</option>
+					<option value="NO">NO</option>
+				</select>
+				<span>TIPO DE UNGIDO: {{tipoungido}}</span>
+				<select name="tipoungido" >
+					<option value="PORCOMPLETAR">SELECCIONAR</option>
+					<option value="ISIS">ISIS</option>
+					<option value="SACERDOTE">SACERDOTE</option>
+					<option value="OBISPO">OBISPO</option>					
+					<option value="N/A">N/A</option>
+				</select>
+				<span>LUMISIAL: {{lumisial}}</span>
+				<input type="text" name="lumisial" placeholder="NUEVO LUMISIAL" required>
+				<input type="submit" value="ENVIAR">
+                 {{else}}
+                    <h1>NO HAY INSTRUCTOR CON ESE USUARIO</h1>
+                {{/each}}
+			</form>
+		</div>
+		</div>		
+	</div>
+</div>	
+
+{{/if}}

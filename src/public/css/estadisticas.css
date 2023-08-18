@@ -1,0 +1,24 @@
+.desplazador{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 50px;
+}
+.margen{
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.contenedorgrafica{
+	width: 400px;
+	height: auto;
+}
+h3{
+	width: 100%;
+}
+.contenedorgrafica{
+	margin-top: 20px;
+}

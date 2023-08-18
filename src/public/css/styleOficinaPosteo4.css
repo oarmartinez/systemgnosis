@@ -1,0 +1,634 @@
+/*---------------------------oficina----------------------------*/
+/*--------------------------------------------------------------*/
+.caja_formulario_campos{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.caja_lector_menu{
+ 	width: 39%;
+ 	height: 100vh;
+ 	padding-bottom: 100px;
+}
+.caja_campos{
+	width: 70px;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	top: 0;
+	right: 0;
+	z-index: 50;
+	position: fixed;
+    padding-top: 50px;
+}
+.caja_campos a{	
+	width: 45px;
+	height: 30px;
+	text-align: center;
+	padding-top: 12.5px;
+	border-radius: 90%;
+	font-family: 'Open Sans', sans-serif;
+	transition: .5s;
+}
+
+.caja_campos a .descripcionbotoncms{
+	width: 200px;
+	height: 30px;
+	display: none;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	transform: translateX(100px);
+	transform: translateY(-10px);
+	border-radius: 40px 0px 0px 40px;
+	box-shadow: 0 0 5px #fff;
+	background: rgba(255, 255, 255, .6);
+	border: solid 1px gold;
+	-webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+	transition: .3s;
+}
+.caja_campos a .descripcionbotoncms p{	
+	font-family: 'open sans', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+.caja_campos a:hover .descripcionbotoncms{
+	display: flex;
+	transition: .3s;
+	transform: translateX(-150px);
+}
+/*------------------------campos de botones---------------------------*/
+
+.caja_menus{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	animation-name: deslizar;
+	animation-duration: .7s ;
+	transition: .5s;
+}
+@keyframes deslizar{
+		0%{opacity: 0;transform: translateY(50px);transition: .5s;}
+		100%{opacity: 1;transform: translateY(0px);transition: .5s;}
+	}
+.caja_menus .caja_para_estilos{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.caja_menus h2{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	border-top: 2px solid ;
+	border-bottom: 2px solid ;
+
+}
+.caja_menus input[type="text"]{
+	width: 80%;
+	height: 20px;
+	padding: 5px 5px 5px 5px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+}
+
+.caja_menus a{
+	text-decoration: none;
+	width: 200px;
+	height: auto;
+	text-align: center;
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/*--------------------------caja de html y muestra------------------------------*/
+.cajon_formulario{
+	width: 55%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 50px;
+}
+.cajon_formulario h1{
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+
+}
+.cajon_formulario .formulario{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.cajon_formulario .formulario form{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+input[type="text"]{
+	width: 80%;
+	height: 20px;
+	padding: 5px 5px 5px 5px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+}
+select{
+	width: 80%;
+	height: 30px;
+	padding: 5px 5px 5px 5px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+	background: rgba(255, 255, 255, .5);
+}
+textarea{
+	width: 80%;
+	height: 100px;
+	padding: 5px 5px 5px 5px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+	background: rgba(255, 255, 255, .5);
+}
+.cajon_formulario .formulario form h2{
+	width: 100%;
+	text-align: center;
+}
+.cajon_formulario .formulario form input[type="submit"]{
+	width: 200px;
+	height: auto;	
+	padding: 5px 5px 5px 5px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+	margin-top: 10px;
+	cursor: pointer;
+	color: #fff;
+	background: darkred;
+	transition: .3s;
+	border-radius: 40px;
+}
+.cajon_formulario .formulario form input[type="submit"]:hover{
+	background: limegreen;
+	transition: .3s;
+}
+.cajon_formulario .formulario form .botones_mostrar{
+	cursor: pointer;
+}
+.cajon_formulario .formulario form .botones_mostrar span{
+	border: solid 1px #fff;
+	padding: 3px 3px 3px 3px;
+}
+.cajon_formulario .formulario form  .html_form{
+	width: 100%;
+ 	height: 400px;
+ 	overflow: hidden;
+ 	overflow-y: scroll;
+	overflow-x: hidden;
+ 	position: relative;
+ 	margin-top: 20px;
+ 	border-top: 1px solid #333;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	z-index: 2;	
+	opacity: 0;
+	position: absolute;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span{
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 20px 20px 20px;
+}
+
+.cajon_formulario .formulario form  .html_form .html{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	z-index: 1;
+	opacity: 0;
+	position: absolute;
+}
+.cajon_formulario .formulario form  .html_form .html textarea{
+	width: 100%;
+	height: 400px;
+	padding: 20px 20px 20px 20px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+}
+
+
+
+/*--------------------------abrircampo------------------------------*/
+
+.cajon_formulario .formulario form  .html_form .abrirPOST{
+	animation-name: postplegable;
+	animation-duration: .7s ;
+	transition: .5s;
+	z-index: 3;
+	opacity: 10;
+}
+@keyframes postplegable{
+		0%{opacity: 0;transition: .5s;}
+		100%{opacity: 1;transition: .5s;}
+	}
+
+
+/*--------------------------estilos del post------------------------------*/
+/*------------------------------------------------------------------------*/
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleLeftBig{
+	width: 100%;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleRightBig{
+	width: 100%;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleCenterBig{
+	width: 100%;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleLeftMedium{
+	width: 100%;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleRightMedium{
+	width: 100%;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleCenterMedium{
+	width: 100%;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleLeftSmall{
+	width: 100%;
+	text-align: left;
+	font-family: 'Open Sans', cursive;
+	letter-spacing: 2px;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleRightSmall{
+	width: 100%;
+	text-align: right;
+	font-family: 'Open Sans', cursive;
+	letter-spacing: 2px;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .titleCenterSmall{
+	width: 100%;
+	text-align: center;
+	font-family: 'Open Sans', cursive;
+	letter-spacing: 2px;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarImg{
+	width: 50%;
+	height: 300px;
+	margin: auto;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextoImg{
+	width: 90%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: auto;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextoImg a{
+	width: 40%;
+	height: 200px;
+}
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextoImg a img{
+	width: 100%;
+	height: 100%;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextoImg .text{
+	width: 40%;
+	height: auto;
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.035em;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextCentrado{
+	width: 80%;
+	height: auto;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarTextJustificado{
+	width: 80%;
+	height: auto;
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+	letter-spacing: 0.035em;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .insertCapturarConcepto{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', cursive;
+	font-style: italic;
+	text-align: justify;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .insertCapturarCita{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', cursive;
+	font-style: italic;
+	text-align: center;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .insertCapturarReferencias{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', cursive;
+	font-style: italic;
+	text-align: right;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .insertCapturarListaiz{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+	text-align: left;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .insertCapturarListade{
+	width: 80%;
+	height: auto;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarArchivo{
+	width: 40%;
+	height: 200px;
+}
+
+.cajon_formulario .formulario form  .html_form .contenido_a_ver span .capturarArchivo img{
+	width: 100%;
+	height: 100%;
+}
+/*---------------------------buscador de post----------------------------*/
+/*-----------------------------------------------------------------------*/
+.galery .caja_posteado{
+	width: 80%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+.galery .caja_posteado .titleLeftBig{
+	width: 80%;
+	margin: auto;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+}
+.galery .caja_posteado .titleRightBig{
+	width: 80%;
+	margin: auto;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+}
+.galery .caja_posteado .titleCenterBig{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+.galery .caja_posteado .titleLeftMedium{
+	width: 80%;
+	margin: auto;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.galery .caja_posteado .titleRightMedium{
+	width: 80%;
+	margin: auto;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.galery .caja_posteado .titleCenterMedium{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.galery .caja_posteado .titleLeftSmall{
+	width: 80%;
+	margin: auto;
+	text-align: left;
+	font-family: 'Dancing Script', cursive;
+	letter-spacing: 2px;
+}
+
+.galery .caja_posteado .titleRightSmall{
+	width: 80%;
+	margin: auto;
+	text-align: right;
+	font-family: 'Dancing Script', cursive;
+	letter-spacing: 2px;
+}
+
+.galery .caja_posteado .titleCenterSmall{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-family: 'Tangerine', cursive;
+	letter-spacing: 2px;
+}
+
+.galery .caja_posteado .capturarImg{
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.galery .caja_posteado .capturarTextoImg{
+	width: 90%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: auto;
+}
+.galery .caja_posteado .capturarTextoImg a{
+	width: 40%;
+	height: 100%;
+}
+.galery .caja_posteado .capturarTextoImg a img{
+	width: 100%;
+	height: 100%;
+}
+
+.galery .caja_posteado .capturarTextoImg .text{
+	width: 40%;
+	height: auto;
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.035em;
+}
+
+.galery .caja_posteado .capturarTextCentrado{
+	width: 80%;
+	height: auto;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+}
+
+.galery .caja_posteado .capturarTextJustificado{
+	width: 80%;
+	height: auto;
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+	margin: auto;
+	letter-spacing: 0.035em;
+}
+
+.galery .caja_posteado .insertCapturarConcepto{
+	width: 80%;
+	height: auto;
+	font-family: 'Dancing Script', cursive;
+	text-align: justify;
+}
+
+.galery .caja_posteado .insertCapturarCita{
+	width: 80%;
+	height: auto;
+	font-family: 'Dancing Script', cursive;
+	text-align: center;
+}
+
+.galery .caja_posteado .insertCapturarReferencias{
+	width: 100%;
+	height: auto;
+	font-family: 'Dancing Script', cursive;
+	text-align: right;
+}
+
+.galery .caja_posteado .insertCapturarListaiz{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+	text-align: left;
+	margin: auto;
+}
+
+.galery .caja_posteado .insertCapturarListade{
+	width: 80%;
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+	text-align: right;
+	margin: auto;
+}
+.galery .caja_posteado .capturarArchivo{
+	width: 100%;
+	height: auto;
+}
+
+.galery .caja_posteado .capturarArchivo img{
+	width: 100%;
+	height: 100%;
+}
+.galery .caja_posteado .date{
+	width: 90%;
+	height: 20px;
+	font-family: 'Open Sans', sans-serif;
+	text-align: right;
+	padding-right: 20px;
+
+}
+.galery .caja_posteado h3{
+	width: 80%;
+	height: auto;
+	margin: auto;
+	font-family: 'Open Sans', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+	
+}
+
+body.dark input[type="text"]{
+	color: #fff;
+}
+
+body.dark select{
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+}
+
+body.dark textarea{
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+}
+
+body.dark .cajon_formulario .formulario form  .html_form .html textarea{
+	color: #fff;
+}
+
+
+body.dark .caja_campos a .descripcionbotoncms{
+	background: rgba(0, 0, 0, .5);
+}

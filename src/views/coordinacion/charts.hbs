@@ -1,0 +1,266 @@
+<link rel="stylesheet" type="text/css" href="/css/oficinas1.css?">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">	
+<link rel="stylesheet" type="text/css" href="/css/estadisticas.css">	
+<!-- Importar chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+{{#if (eq user.cargo "ADMIN")}}
+{{> nav }}
+{{else}} {{#if (eq user.cargo "ODE")}}
+{{> navode }}
+{{else}} {{#if (eq user.cargo "OBISPO")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "RECTOR")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR MISIONAL")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR TECNOTRONICA")}}
+{{> navtecnotronica }}
+{{else}} {{#if (eq user.cargo "COORDINADOR AGEACAC")}}
+{{> navageacac }}
+{{else}} {{#if (eq user.cargo "COORDINADOR JUVENTUDES")}}
+{{> navjuventudes }}
+{{else}} {{#if (eq user.cargo "MISIONERO")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "INSTRUCTOR LOCAL")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE AGEACAC")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE JUVENTUDES")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "TUTOR DE TECNOTRONICA")}}
+{{> navInstructores }}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+
+<div id ="contenido" class="contenido">
+<div class="desplazador" style="padding-bottom: 30vh;">
+
+
+<!-- Crear un canvas donde se mostrará la gráfica -->
+<div class="contenedorgrafica">
+    <canvas id="miGrafica" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficasexo" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficaecivil" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficaprofesion" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficacargo" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficaungido" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficatipoungido" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficaestado" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficadiocesis" ></canvas>
+</div>
+<div class="contenedorgrafica">
+    <canvas id="miGraficaestatus" ></canvas>
+</div>
+
+</div>
+</div>
+<!-- Crear un script que genere la gráfica con los datos -->
+<script>
+  // Obtener el contexto del canvas
+  const ctx = document.getElementById('miGrafica').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGrafica = new Chart(ctx, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each estadistica}}'{{rama}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each estadistica}}{{repeticiones}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxsexo = document.getElementById('miGraficasexo').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficasexo = new Chart(ctxsexo, {
+    type: 'pie', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartsexo}}'{{sexo}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartsexo}}{{rsexo}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxecivil = document.getElementById('miGraficaecivil').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficaecivil = new Chart(ctxecivil, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartecivil}}'{{ecivil}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartecivil}}{{recivil}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxprofesion = document.getElementById('miGraficaprofesion').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficaprofesion = new Chart(ctxprofesion, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartprofesion}}'{{profesion}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartprofesion}}{{rprofesion}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxcargo = document.getElementById('miGraficacargo').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficacargo = new Chart(ctxcargo, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartcargo}}'{{cargo}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartcargo}}{{rcargo}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxungido = document.getElementById('miGraficaungido').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficaungido = new Chart(ctxungido, {
+    type: 'pie', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartungido}}'{{ungido}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartungido}}{{rungido}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxtipoungido = document.getElementById('miGraficatipoungido').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficatipoungido = new Chart(ctxtipoungido, {
+    type: 'pie', // Tipo de gráfica
+    data: {
+    labels: [{{#each charttipoungido}}'{{tipoungido}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each charttipoungido}}{{rtipoungido}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxestado = document.getElementById('miGraficaestado').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficaestado = new Chart(ctxestado, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartestado}}'{{estado}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartestado}}{{restado}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxdiocesis = document.getElementById('miGraficadiocesis').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficadiocesis = new Chart(ctxdiocesis, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartdiocesis}}'{{diocesis}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartdiocesis}}{{rdiocesis}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+<script>
+  // Obtener el contexto del canvas
+  const ctxestatus = document.getElementById('miGraficaestatus').getContext('2d');
+
+  // Crear la gráfica con los datos y opciones
+  const miGraficaestatus = new Chart(ctxestatus, {
+    type: 'doughnut', // Tipo de gráfica
+    data: {
+    labels: [{{#each chartestatus}}'{{estatus}}',{{/each}}], // Etiquetas de los datos
+    datasets: [{
+    label: 'INTEGRANTES', // Etiqueta del conjunto de datos
+    data: [{{#each chartestatus}}{{restatus}},{{/each}}], // Datos numéricos
+  }]
+},
+    
+  });
+</script>
+
+
+
+{{/if}}

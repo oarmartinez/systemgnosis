@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="css/signup.css?ver=1.1">
+<form action="/signup" id="fmRegistro" method="POST" autocomplete="off" >
+            <input type="text" name="cedula" placeholder="CEDULA" required>
+            <input type="date" name="fechanacimiento" placeholder="FECHA DE NACIMIENTO" required>
+            <select name="sexo">
+                <option>SEXO</option required>
+                <option value="FEMENINO">FEMENINO</option>
+                <option value="MASCULINO">MASCULINO</option>
+            </select>
+            <input type="text" name="usuario" placeholder="NOMBRE USUARIO" required>
+            <input type="text" name="nombre" placeholder="NOMBRE" required>
+            <input type="text" name="apellido" placeholder="APELLIDO" required>
+            <select name="rama">
+                <option>RAMA</option required>
+                <option value="ENSEÑANZA">ENSEÑANZA</option>
+                <option value="AGEACAC">AGEACAC</option>
+                <option value="JUVENTUDES">JUVENTUDES</option>
+                <option value="TECNOTRONICA">TECNOTRONICA</option>
+            </select>
+            <select name="cargo" required>
+                <option>CARGO</option>
+                <option value="OBISPO DE ENSEÑANZA">OBISPO DE ENSEÑANZA</option>
+                <option value="SECRETARÍA DE ENSEÑANZA">SECRETARÍA DE ENSEÑANZA</option>                
+                <option value="OBISPO">OBISPO</option>
+                <option value="ENCARGADO">ENCARGADO</option>
+                <option value="COORDINADOR MISIONAL">COORDINADOR MISIONAL</option>
+                <option value="COORDINADOR TECNOTRONICA">COORDINADOR TECNOTRONICA</option>
+                <option value="COORDINADOR AGEACAC">COORDINADOR AGEACAC</option>
+                <option value="COORDINADOR JUVENTUDES">COORDINADOR JUVENTUDES</option>              
+                <option value="MISIONERO">MISIONERO</option>
+                <option value="INSTRUCTOR LOCAL">INSTRUCTOR LOCAL</option>
+                <option value="TUTOR DE TECNOTRONICA">TUTOR DE TECNOTRONICA</option>
+                <option value="PROMOTOR DE AGEACAC">PROMOTOR DE AGEACAC</option>
+                <option value="PROMOTOR DE JUVENTUDES">PROMOTOR DE JUVENTUDES</option>
+            </select>
+            <select name="estado" required>
+                <option>ESTADO</option>
+                <option value="AMAZONAS">AMAZONAS</option>
+                <option value="ANZOÁTEGUI">ANZOÁTEGUI</option>
+                <option value="APURE">APURE</option>
+                <option value="ARAGUA">ARAGUA</option>
+                <option value="BARINAS">BARINAS</option>
+                <option value="BOLÍVAR">BOLÍVAR</option>
+                <option value="CARABOBO">CARABOBO</option>              
+                <option value="COJEDES">COJEDES</option>
+                <option value="DELTA AMACURO">DELTA AMACURO</option>
+                <option value="DISTRITO CAPITAL">DISTRITO CAPITAL</option>
+                <option value="FALCÓN">FALCÓN</option>
+                <option value="GUÁRICO">GUÁRICO</option>
+                <option value="LARA">LARA</option>
+                <option value="MÉRIDA">MÉRIDA</option>
+                <option value="MIRANDA">MIRANDA</option>
+                <option value="MONAGAS">MONAGAS</option>
+                <option value="NUEVA ESPARTA">NUEVA ESPARTA</option>
+                <option value="PORTUGUESA">PORTUGUESA</option>
+                <option value="SUCRE">SUCRE</option>
+                <option value="TÁCHIRA">TÁCHIRA</option>
+                <option value="TRUJILLO">TRUJILLO</option>
+                <option value="VARGAS">VARGAS</option>
+                <option value="YARACUY">YARACUY</option>
+                <option value="ZULIA">ZULIA</option>
+            </select>
+            <input type="text" name="diocesis" placeholder="DIOCESIS" required>
+            <input type="text" name="lumisial" placeholder="LUMISIAL" required>
+            <textarea name="estadosrecorridos" placeholder="ESTADOS RECORRIDOS" required></textarea>
+            <select name="estatus" required>
+                <option>ESTATUS</option>
+                <option value="ACTIVO">ACTIVO</option>
+                <option value="INACTIVO">INACTIVO</option>
+            </select>
+            <input type="text" name="email" placeholder="EMAIL" required>
+            <input type="text" name="password" placeholder="PASSWORD" required>   
+            <input type="submit" value="REGISTRAR">
+        </form>

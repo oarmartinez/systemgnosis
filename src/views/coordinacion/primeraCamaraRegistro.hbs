@@ -1,0 +1,103 @@
+	<link rel="stylesheet" type="text/css" href="/css/inscripciones1.css">
+    <link rel="stylesheet" type="text/css" href="/css/oficinas1.css?">
+    <link rel="stylesheet" type="text/css" href="/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="/css/estadisticas.css">
+    <link rel="stylesheet" type="text/css" href="/css/styleOficinaPosteo4.css">
+    <link rel="stylesheet" type="text/css" href="/css/tablas/tablainstructores.css">
+    <link rel="stylesheet" type="text/css" href="/css/tablas/biblioteca.css">
+{{#if user}}
+<div class="bienvenida">
+	<span>BIENVENIDO: {{ user.nombre }} </span>
+	<button id="switch" class="switch">
+		<span class="icon-light-down"></span>
+		<span class="icon-moon"></span>
+	</button>
+</div>
+{{#if (eq user.cargo "ADMIN")}}
+{{> nav }}
+{{else}} {{#if (eq user.cargo "ODE")}}
+{{> navode }}
+{{else}} {{#if (eq user.cargo "OBISPO")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "RECTOR")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR MISIONAL")}}
+{{> navdiocesano }}
+{{else}} {{#if (eq user.cargo "COORDINADOR TECNOTRONICA")}}
+{{> navtecnotronica }}
+{{else}} {{#if (eq user.cargo "COORDINADOR AGEACAC")}}
+{{> navageacac }}
+{{else}} {{#if (eq user.cargo "COORDINADOR JUVENTUDES")}}
+{{> navjuventudes }}
+{{else}} {{#if (eq user.cargo "MISIONERO")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "INSTRUCTOR LOCAL")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE AGEACAC")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "PROMOTOR DE JUVENTUDES")}}
+{{> navInstructores }}
+{{else}} {{#if (eq user.cargo "TUTOR DE TECNOTRONICA")}}
+{{> navInstructores }}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+
+<div id ="contenido" class="contenido">
+    <div class="desplasador" style="padding-bottom: 30vh;">
+        <div class="caja_formularios_archivos">
+            <h2>INSERTAR DATOS DE PRIMERA CAMARA</h2>
+        	<h2>{{> mensajes }}</h2>
+            <form action="/registroPrimerasCamaras" method="POST" autocomplete="off">            
+                <input type="text" name="cedula" placeholder="CEDULA O PASAPORTE"> 
+                <input type="text" name="nombre" placeholder="NOMBRE"> 
+                <input type="text" name="apellido" placeholder="APELLIDO">
+                <input type="text" name="email" placeholder="CORREO"> 
+                <input type="text" name="telefono" placeholder="TELEFONO"> 
+                <select name="estado" required>
+                    <option>ESTADO</option>
+                    <option value="NACIONAL">NACIONAL</option>
+                    <option value="AMAZONAS">AMAZONAS</option>
+                    <option value="ANZOÁTEGUI">ANZOÁTEGUI</option>
+                    <option value="APURE">APURE</option>
+                    <option value="ARAGUA">ARAGUA</option>
+                    <option value="BARINAS">BARINAS</option>
+                    <option value="BOLÍVAR">BOLÍVAR</option>
+                    <option value="CARABOBO">CARABOBO</option>              
+                    <option value="COJEDES">COJEDES</option>
+                    <option value="DELTA AMACURO">DELTA AMACURO</option>
+                    <option value="DISTRITO CAPITAL">DISTRITO CAPITAL</option>
+                    <option value="FALCÓN">FALCÓN</option>
+                    <option value="GUÁRICO">GUÁRICO</option>
+                    <option value="LARA">LARA</option>
+                    <option value="MÉRIDA">MÉRIDA</option>
+                    <option value="MIRANDA">MIRANDA</option>
+                    <option value="MONAGAS">MONAGAS</option>
+                    <option value="NUEVA ESPARTA">NUEVA ESPARTA</option>
+                    <option value="PORTUGUESA">PORTUGUESA</option>
+                    <option value="SUCRE">SUCRE</option>
+                    <option value="TÁCHIRA">TÁCHIRA</option>
+                    <option value="TRUJILLO">TRUJILLO</option>
+                    <option value="VARGAS">VARGAS</option>
+                    <option value="YARACUY">YARACUY</option>
+                    <option value="ZULIA">ZULIA</option>
+                </select> 
+                <input type="text" name="instructor" placeholder="INSTRUCTOR" required>
+                <input type="hidden" name="estatus" value="PENDIENTE" required>
+                <input type="submit" value="REGISTRAR">
+            </form>
+        </div>
+    </div>
+</div>
+
+{{/if}}
